@@ -23,7 +23,7 @@
 
 | افزونه خاموش | افزونه روشن |
 | --- | --- |
-| ![Extension OFF](assets/screenshots/extension-off.png) | ![Extension ON](assets/screenshots/extension-on.png) |
+| ![Extension OFF](assets/screenshots/cleaner-disabled.png) | ![Extension ON](assets/screenshots/cleaner-enabled.png) |
 
 با فعال‌شدن افزونه, محصولات دارای برچسب «سفارشی» از فهرست نتایج حذف می‌شوند و محصولات عادی بدون ایجاد فضای خالی دوباره در کنار یکدیگر قرار می‌گیرند.
 ## نصب دستی در Chrome یا Chromium
