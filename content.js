@@ -154,14 +154,14 @@
 
   installStyle();
 
-  chrome.storage.sync.get({ cleanerEnabled: true }, ({ cleanerEnabled }) => {
+  chrome.storage.local.get({ cleanerEnabled: true }, ({ cleanerEnabled }) => {
     enabled = cleanerEnabled !== false;
     mirrorEnabledState(enabled);
     scheduleScan(document);
   });
 
   chrome.storage.onChanged.addListener((changes, areaName) => {
-    if (areaName !== "sync" || !changes.cleanerEnabled) return;
+    if (areaName !== "local" || !changes.cleanerEnabled) return;
     enabled = changes.cleanerEnabled.newValue !== false;
     mirrorEnabledState(enabled);
     if (enabled) scheduleScan(document);

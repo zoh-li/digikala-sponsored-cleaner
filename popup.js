@@ -25,7 +25,7 @@ async function activeTab() {
 }
 
 async function refreshState() {
-  const { cleanerEnabled = true } = await chrome.storage.sync.get({ cleanerEnabled: true });
+  const { cleanerEnabled = true } = await chrome.storage.local.get({ cleanerEnabled: true });
   renderEnabled(cleanerEnabled !== false);
 
   try {
@@ -48,7 +48,7 @@ async function refreshState() {
 toggle.addEventListener("change", async () => {
   const enabled = toggle.checked;
   renderEnabled(enabled);
-  await chrome.storage.sync.set({ cleanerEnabled: enabled });
+  await chrome.storage.local.set({ cleanerEnabled: enabled });
 
   try {
     const tab = await activeTab();

@@ -46,7 +46,7 @@ chrome.runtime.onStartup.addListener(() => {
 });
 
 chrome.storage.onChanged.addListener((changes, areaName) => {
-  if (areaName !== "sync" || !changes.cleanerEnabled) {
+  if (areaName !== "local" || !changes.cleanerEnabled) {
     return;
   }
 
