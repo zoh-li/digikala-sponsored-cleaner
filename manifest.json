@@ -4,21 +4,54 @@
   "short_name": "پاک‌ساز دیجی‌کالا",
   "description": "محصولات تبلیغاتی دارای برچسب سفارشی را از فهرست‌های دیجی‌کالا مخفی می‌کند.",
   "version": "1.0.0",
-  "permissions": ["storage", "activeTab"],
+
+  "icons": {
+    "16": "icons/icon-16-on.png",
+    "32": "icons/icon-32-on.png",
+    "48": "icons/icon-48-on.png",
+    "128": "icons/icon-128-on.png"
+  },
+
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
   "action": {
     "default_title": "Digikala sponsored cleaner",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16-on.png",
+      "32": "icons/icon-32-on.png",
+      "48": "icons/icon-48-on.png",
+      "128": "icons/icon-128-on.png"
+    }
   },
+
   "content_scripts": [
     {
-      "matches": ["*://digikala.com/*", "*://*.digikala.com/*"],
-      "js": ["page-interceptor.js"],
+      "matches": [
+        "*://digikala.com/*",
+        "*://*.digikala.com/*"
+      ],
+      "js": [
+        "page-interceptor.js"
+      ],
       "run_at": "document_start",
       "world": "MAIN"
     },
     {
-      "matches": ["*://digikala.com/*", "*://*.digikala.com/*"],
-      "js": ["content.js"],
+      "matches": [
+        "*://digikala.com/*",
+        "*://*.digikala.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_start"
     }
   ]
