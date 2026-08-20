@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاک‌ساز دیجی‌کالا</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="panel">
+      <div class="glow glow-one"></div>
+      <div class="glow glow-two"></div>
+
+      <header class="header">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <path d="M4 7h16M9 11v7m6-7v7M7 7l1-3h8l1 3M6 7l1 13h10l1-13"/>
+          </svg>
+        </div>
+        <div>
+          <h1>پاک‌ساز دیجی‌کالا</h1>
+          <p>خداحافظ محصولات سفارشی!</p>
+        </div>
+      </header>
+
+      <section class="switch-card">
+        <div>
+          <strong id="status-title">فیلتر فعال است</strong>
+          <span id="status-description">تبلیغات سفارشی مخفی می‌شوند</span>
+        </div>
+        <label class="switch" aria-label="روشن یا خاموش کردن افزونه">
+          <input id="enabled-toggle" type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </section>
+
+      <section class="stats" aria-live="polite">
+        <div class="stat">
+          <span id="hidden-count" class="number">0</span>
+          <span>محصول حذف‌شده از نتایج</span>
+        </div>
+        <div class="divider"></div>
+        <div class="stat">
+          <span id="total-count" class="number">0</span>
+          <span>تبلیغ شناسایی‌شده در نشست</span>
+        </div>
+      </section>
+
+      <p id="page-message" class="message">در حال بررسی صفحه…</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Digikala sponsored cleaner",
+  "short_name": "پاک‌ساز دیجی‌کالا",
+  "description": "محصولات تبلیغاتی دارای برچسب سفارشی را از فهرست‌های دیجی‌کالا مخفی می‌کند.",
+  "version": "1.0.0",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_title": "Digikala sponsored cleaner",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://digikala.com/*", "*://*.digikala.com/*"],
+      "js": ["page-interceptor.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["*://digikala.com/*", "*://*.digikala.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
