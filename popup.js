@@ -6,6 +6,9 @@ const statusDescription = document.getElementById("status-description");
 const hiddenCount = document.getElementById("hidden-count");
 const totalCount = document.getElementById("total-count");
 const pageMessage = document.getElementById("page-message");
+const githubLink = document.getElementById("github-link");
+const githubNote = document.getElementById("github-note");
+const GITHUB_REPOSITORY_URL = "https://github.com/zoh-li/digikala-sponsored-cleaner";
 
 function persianNumber(value) {
   return new Intl.NumberFormat("fa-IR").format(Number(value) || 0);
@@ -44,6 +47,13 @@ async function refreshState() {
     pageMessage.className = "message warning";
   }
 }
+
+function openGithubRepository() {
+  chrome.tabs.create({ url: GITHUB_REPOSITORY_URL });
+}
+
+githubLink.addEventListener("click", openGithubRepository);
+githubNote.addEventListener("click", openGithubRepository);
 
 toggle.addEventListener("change", async () => {
   const enabled = toggle.checked;

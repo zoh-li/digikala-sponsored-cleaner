@@ -7,7 +7,7 @@
 
 body {
   width: 360px;
-  min-height: 330px;
+  min-height: 376px;
   margin: 0;
   color: #f8fafc;
   background: #070b16;
@@ -15,7 +15,7 @@ body {
 
 .panel {
   position: relative;
-  min-height: 330px;
+  min-height: 376px;
   padding: 24px;
   overflow: hidden;
   background:
@@ -56,6 +56,35 @@ body {
 .logo svg { width: 25px; fill: none; stroke: white; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 h1 { margin: 0 0 5px; font-size: 17px; letter-spacing: -.25px; }
 .header p { margin: 0; color: #9ca8bd; font-size: 12px; }
+
+.github-link {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  place-items: center;
+  color: #aeb8ca;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 11px;
+  background: rgba(255,255,255,.045);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 8px 22px rgba(0,0,0,.16);
+  transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.github-link svg { width: 19px; height: 19px; fill: currentColor; }
+.github-link:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,.20);
+  background: rgba(255,255,255,.10);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 9px 24px rgba(0,0,0,.24);
+  transform: translateY(-1px);
+}
+.github-link:active { transform: translateY(0) scale(.96); }
+.github-link:focus-visible { outline: 2px solid #ff6c72; outline-offset: 3px; }
 
 .switch-card {
   position: relative;
@@ -101,6 +130,40 @@ h1 { margin: 0 0 5px; font-size: 17px; letter-spacing: -.25px; }
 .message { position: relative; margin: 0; color: #8290a6; font-size: 11px; text-align: center; }
 .message.success { color: #78d6ae; }
 .message.warning { color: #f7bc69; }
+
+.github-note {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 9px 11px;
+  color: #929fb3;
+  font: inherit;
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: right;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,.065);
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(255,255,255,.025), rgba(239,64,86,.045));
+  transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.github-note svg { width: 15px; height: 15px; flex: 0 0 15px; fill: currentColor; }
+.github-note > span:not(.github-note-arrow) { flex: 1; }
+.github-note-arrow { color: #ef6072; font-size: 15px; transition: transform .2s ease; }
+.github-note:hover {
+  color: #dbe2ee;
+  border-color: rgba(239,64,86,.22);
+  background: linear-gradient(90deg, rgba(255,255,255,.045), rgba(239,64,86,.09));
+  transform: translateY(-1px);
+}
+.github-note:hover .github-note-arrow { transform: translateX(-2px); }
+.github-note:active { transform: translateY(0); }
+.github-note:focus-visible { outline: 2px solid #ff6c72; outline-offset: 2px; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
