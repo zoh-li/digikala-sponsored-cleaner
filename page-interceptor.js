@@ -1,7 +1,8 @@
 (() => {
   "use strict";
 
-  const SEARCH_API_PATTERN = /\/discovery\/api\/v2\/search(?:[/?#]|$)/i;
+  const PRODUCT_LISTING_API_PATTERN =
+  /\/discovery\/api\/v2\/(?:search|categories\/[^/?#]+\/products)(?:[/?#]|$)/i;
   const ENABLED_ATTRIBUTE = "data-dk-cleaner-enabled";
   const API_TOTAL_ATTRIBUTE = "data-dk-cleaner-api-total";
   const STORAGE_MIRROR_KEY = "dkSponsoredCleanerEnabled";
@@ -19,8 +20,8 @@
     }
   }
 
-  function isSearchRequest(url) {
-    return typeof url === "string" && SEARCH_API_PATTERN.test(url);
+  function isProductListingRequest(url) {
+    return typeof url === "string" && PRODUCT_LISTING_API_PATTERN.test(url);
   }
 
   function adIdentity(widget) {
@@ -91,7 +92,7 @@
 
     window.fetch = async function patchedFetch(...args) {
       const response = await nativeFetch.apply(this, args);
-      if (!isEnabled() || !isSearchRequest(response.url)) return response;
+      if (!isEnabled() || !isProductListingRequest(response.url)) return response;
 
       try {
         const payload = await response.clone().json();
@@ -170,7 +171,7 @@
         if (
           request.readyState !== XMLHttpRequest.DONE ||
           !isEnabled() ||
-          !isSearchRequest(requestUrls.get(request))
+          !isProductListingRequest(requestUrls.get(request))
         ) return;
 
         try {
