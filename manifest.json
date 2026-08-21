@@ -3,7 +3,7 @@
   "name": "Digikala sponsored cleaner",
   "short_name": "پاک‌ساز دیجی‌کالا",
   "description": "محصولات تبلیغاتی دارای برچسب سفارشی را از فهرست‌های دیجی‌کالا مخفی می‌کند.",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "icons": {
     "16": "icons/icon-16-on.png",
